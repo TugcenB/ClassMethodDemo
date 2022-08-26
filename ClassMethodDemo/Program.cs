@@ -23,17 +23,18 @@ namespace ClassMethodDemo
             customer3.Surname = "Miller";
             customer3.Id = 123447;
 
-            List<Customer> list = new List<Customer>();
-            list.Add(customer1);
-            list.Add(customer2);
-            list.Add(customer3);
-
-            foreach (var customer in list)
-            {
-                Console.WriteLine(customer.Name +" " customer.Surname + " : " + customer.Id);
-            }
             CustomerManager customerManager = new CustomerManager();
+            customerManager.Add(customer1);
+            customerManager.Add(customer2);
+            customerManager.Add(customer3);
+            Console.WriteLine("-------------------------");
+
+            customerManager.List();
+            Console.WriteLine("---------------------------");
             customerManager.Delete(customer1);
+            Console.WriteLine("\nNew List\n");
+            customerManager.List();
+
         }
     }
 }
